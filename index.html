@@ -6,13 +6,13 @@
   <title>Rashmi Pandey | Social Media Manager</title>
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --bg: #0f172a;
       --bg-alt: #020617;
       --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.12);
+      --accent-soft: rgba(56, 189, 248, 0.12);
       --text: #e5e7eb;
       --muted: #9ca3af;
       --card: #111827;
@@ -26,154 +26,180 @@
       line-height: 1.6;
     }
 
-    .page { max-width:1080px;margin:0 auto;padding:24px 20px 64px; }
-
-    /* Profile Photo */
-    .profile-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #38bdf8;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-      margin: 0 auto 20px auto;
-      display: block;
+    .page {
+      max-width: 1080px; margin: 0 auto; padding: 24px 20px 64px;
     }
 
     header {
-      position: sticky; top:0; z-index:20;
+      position: sticky; top: 0; z-index: 20;
       backdrop-filter: blur(14px);
-      background: linear-gradient(to bottom, rgba(15,23,42,0.94), rgba(15,23,42,0.88), transparent);
+      background: rgba(15,23,42,0.9);
       border-bottom: 1px solid var(--border);
     }
 
     .nav {
-      max-width:1080px;margin:0 auto;
-      padding:14px 20px;
-      display:flex;justify-content:space-between;align-items:center;
+      display: flex; justify-content: space-between;
+      align-items: center; padding: 14px 20px;
+      max-width: 1080px; margin: auto;
     }
 
-    .avatar {
-      width: 36px; height: 36px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #38bdf8, #4f46e5);
-      display:flex;justify-content:center;align-items:center;
-      font-weight:700;font-size:18px;color:white;
+    .avatar { 
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg,#38bdf8,#4f46e5);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 18px;
     }
 
-    .profile-center { text-align:center; }
+    .nav-name { font-size: 15px; font-weight: 600; }
+    .nav-role { font-size: 12px; color: var(--muted); }
 
-    .hero {
-      display:grid; gap:32px;
-      margin-top:30px;
+    /* NEW PROFILE PHOTO STYLE */
+    .profile-photo {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #38bdf8;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin: auto;
+      display: block;
     }
 
-    .hero-title {
-      font-size: clamp(2rem, 4vw, 2.6rem);
-      font-weight: 700;
-      text-align:center;
-      margin-bottom:12px;
+    /* HERO */
+    .hero { display: grid; gap: 32px; margin-top: 40px; }
+    @media (min-width: 900px) {
+      .hero {
+        grid-template-columns: 3fr 2fr;
+        align-items: center;
+      }
     }
 
+    .hero-title { font-size: clamp(2.1rem,4vw,2.7rem); font-weight: 650; }
     .hero-title span {
-      background: linear-gradient(to right, #38bdf8, #a855f7);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      background: linear-gradient(to right,#38bdf8,#a855f7);
+      -webkit-background-clip: text; color: transparent;
     }
 
-    .hero-subtitle {
-      text-align:center;
-      font-size:15px;
-      max-width:500px;
-      margin: 0 auto 18px auto;
+    .hero-subtitle { color: var(--muted); max-width: 34rem; margin: 12px 0; }
+
+    .tag-pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(56,189,248,0.12);
+      font-size: 11px;
       color: var(--muted);
     }
 
-    .hero-tags {
-      display:flex;flex-wrap:wrap;
-      justify-content:center;
-      gap:10px;
-      margin-bottom:20px;
-    }
-
-    .tag-pill {
-      font-size:11px;padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,0.6);
-      background: rgba(15,23,42,0.98);
-      color:var(--muted);
+    .hero-actions button {
+      padding: 9px 16px; border-radius: 999px; border: none;
+      font-size: 14px; cursor: pointer; margin-right: 10px;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #38bdf8, #4f46e5);
-      border:1px solid rgba(148,163,184,0.5);
-      padding:10px 18px;
-      color:white;border-radius:999px;
-      cursor:pointer;font-size:14px;
-      margin-right:10px;
+      background: linear-gradient(135deg,#38bdf8,#4f46e5);
+      color: white;
     }
-
     .btn-ghost {
-      background: rgba(15,23,42,0.9);
-      border:1px solid rgba(148,163,184,0.5);
-      padding:10px 18px;
-      color:var(--muted);
-      border-radius:999px;
-      font-size:14px;
-      cursor:pointer;
+      background: rgba(15,23,42,0.9); color: var(--muted);
+      border: 1px solid rgba(148,163,184,0.5);
     }
 
-    .hero-actions { text-align:center;margin-top:15px; }
+    .section {
+      margin-top: 20px; padding: 20px;
+      background: rgba(15,23,42,0.85);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .section-title { font-size: 18px; font-weight: 600; }
+    .section-kicker { font-size: 12px; color: var(--muted); }
+
+    ul.bullets { margin-top: 6px; }
+    ul.bullets li { margin-bottom: 6px; color: var(--muted); }
 
   </style>
 </head>
-
 <body>
 
 <header>
   <nav class="nav">
-    <div style="display:flex;align-items:center;gap:10px;">
+    <div style="display:flex;gap:10px;align-items:center;">
       <div class="avatar">R</div>
       <div>
-        <div style="font-weight:600;font-size:15px;">Rashmi Pandey</div>
-        <div style="font-size:12px;color:var(--muted);">Social Media Manager</div>
+        <div class="nav-name">Rashmi Pandey</div>
+        <div class="nav-role">Social Media Manager</div>
       </div>
     </div>
   </nav>
 </header>
 
 <div class="page">
-
-  <!-- HERO SECTION -->
   <section class="hero">
 
-    <!-- YOUR PHOTO -->
-    <img src="profile.jpg" alt="Rashmi Pandey" class="profile-photo">
+    <!-- ⭐ YOUR PROFILE PHOTO -->
+    <img src="profile.JPG" alt="Profile Photo" class="profile-photo">
 
-    <h1 class="hero-title">
-      Social Media Manager for <span>influencers & creators</span>.
-    </h1>
+    <div>
+      <h1 class="hero-title">
+        Social Media Manager for <span>influencers & creators</span>.
+      </h1>
 
-    <p class="hero-subtitle">
-      I help influencers and brands grow online using engaging content, trends, and strategic planning.
-    </p>
+      <p class="hero-subtitle">
+        I help influencers and brands show up consistently online with relatable, on-trend and personality-driven content.
+      </p>
 
-    <div class="hero-tags">
-      <span class="tag-pill">Instagram · YouTube · Facebook</span>
-      <span class="tag-pill">Content Calendars</span>
-      <span class="tag-pill">Reels · Shoots</span>
-      <span class="tag-pill">Brand Collaborations</span>
-    </div>
+      <div class="hero-tags">
+        <span class="tag-pill">Instagram • YouTube • Facebook</span>
+        <span class="tag-pill">Content calendars</span>
+        <span class="tag-pill">Brand collaborations</span>
+      </div>
 
-    <div class="hero-actions">
-      <button class="btn-primary">Hire Me</button>
-      <button class="btn-ghost">View Experience</button>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Hire me
+        </button>
+        <button class="btn-ghost" onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">
+          My Experience
+        </button>
+      </div>
     </div>
 
   </section>
 
-</div>
+  <!-- ABOUT SECTION -->
+  <section class="section" id="about">
+    <div class="section-kicker">About</div>
+    <div class="section-title">Who I am</div>
+    <p style="margin-top:10px;color:var(--muted);">
+      I am a Social Media Manager with hands-on experience handling influencer accounts, planning content calendars, and managing online presence across multiple platforms.
+    </p>
+  </section>
 
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-kicker">Experience</div>
+    <div class="section-title">My recent role</div>
+
+    <ul class="bullets">
+      <li>Created monthly content calendars based on trends.</li>
+      <li>Managed Instagram, YouTube & Facebook posting schedules.</li>
+      <li>Coordinated shoot planning, reels & content ideas.</li>
+      <li>Worked with brands for campaigns and collaborations.</li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-kicker">Contact</div>
+    <div class="section-title">Let’s Work Together</div>
+
+    <p style="margin-top:10px;color:var(--muted);">
+      Phone: <a href="tel:+919068542137" style="color:white;">+91 90685 42137</a><br>
+      Email: <a href="mailto:rashmipandey09072001@gmail.com" style="color:white;">rashmipandey09072001@gmail.com</a>
+    </p>
+  </section>
+
+</div>
 </body>
 </html>
