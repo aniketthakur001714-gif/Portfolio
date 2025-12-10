@@ -525,15 +525,71 @@
       color: var(--muted);
     }
 
+    /* --- NEW CSS FOR VIDEO GRID --- */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    .video-card {
+      display: block;
+      aspect-ratio: 9 / 16;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      background-color: #1f2937;
+    }
+
+    .video-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+      display: flex;
+      align-items: flex-end;
+      padding: 12px;
+    }
+
+    .video-info {
+      font-size: 11px;
+      color: white;
+      font-weight: 500;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
     @media (max-width: 640px) {
       .nav-links {
         display: none;
       }
-
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
       header {
         background: rgba(15, 23, 42, 0.98);
       }
-
       .hero-card-main {
         max-width: 100%;
       }
@@ -684,9 +740,46 @@
             <div class="section-kicker">Work snapshot</div>
             <h2 class="section-title">What I work on</h2>
           </div>
-          <div class="section-kicker">Screenshots & links can be added here later.</div>
+          <div class="section-kicker">Featured content managed</div>
         </div>
 
+        <div class="video-grid">
+          
+          <a href="https://youtube.com/shorts/wTshYmGe47s?si=zkynL4SDaspQeMDd" target="_blank" class="video-card">
+            <img src="https://i.ytimg.com/vi/wTshYmGe47s/hqdefault.jpg" alt="Dulhan Ghar Aayi">
+            <div class="video-overlay">
+              <div class="video-info">YouTube Short</div>
+            </div>
+          </a>
+
+          <a href="https://youtube.com/shorts/uHngrEWju_8?si=xI2q5IGPcoWFJPCW" target="_blank" class="video-card">
+            <img src="https://i.ytimg.com/vi/uHngrEWju_8/hqdefault.jpg" alt="Emotional moments for lifetime">
+            <div class="video-overlay">
+              <div class="video-info">YouTube Short</div>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/reel/CoUDx-jgnB9/?igsh=MXdlaTQxM2dvZGpw" target="_blank" class="video-card">
+            <img src="https://placehold.co/400x710/1f2937/9ca3af?text=Insta+Reel+1" alt="Instagram Reel">
+            <div class="video-overlay">
+              <div class="video-info">Instagram Reel</div>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/reel/CpUWlMzALaW/?igsh=dnVwcmU2MGphNjlu" target="_blank" class="video-card">
+            <img src="https://placehold.co/400x710/1f2937/9ca3af?text=Insta+Reel+2" alt="Instagram Reel">
+            <div class="video-overlay">
+              <div class="video-info">Instagram Reel</div>
+            </div>
+          </a>
+
+          <a href="https://www.instagram.com/reel/CpdBXnGjPV6/?igsh=OXE5M2tlYzhmMjho" target="_blank" class="video-card">
+            <img src="https://placehold.co/400x710/1f2937/9ca3af?text=Insta+Reel+3" alt="Instagram Reel">
+            <div class="video-overlay">
+              <div class="video-info">Instagram Reel</div>
+            </div>
+          </a>
+        </div>
         <div class="section-grid two-col">
           <article class="item">
             <div class="item-header">
